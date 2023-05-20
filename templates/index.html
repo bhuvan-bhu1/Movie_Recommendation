@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+</head>
+<body>
+   <form action="/" method="post" style="
+    margin-top: 20px;
+    ">
+    <h2 style="
+        margin-left: 36%;
+        color: blueviolet;
+
+        ">Movie Recommendation System</h2><br>
+    <input type="text" name="movie" id="movie" placeholder="Enter Movie Name" style="
+    margin-left: 80px;
+    ">
+    <input type="submit" id="submit" value="Search">
+   </form> 
+   <table style="
+   width: 80%;
+   height: 100%;
+   margin-left: 80px;
+   margin-top: 10px;
+   ">
+    <tr>
+        <th bgcolor="cyan">Title</th>
+        <th bgcolor="pink">Director</th>
+        <th bgcolor="yellow">Release date</th>
+    </tr>
+    
+    {% for data in value %}
+   <tr>
+    <td bgcolor="cyan">{{ data[0] }}</td>
+    <td bgcolor="pink">{{ data[1] }}</td>
+    <td bgcolor="yellow">{{ data[2] }}</td>
+   </tr>
+   {% endfor %}
+</table>
+    <div style="
+    margin: 10px 0px 0 80px ;
+    ">
+
+        Used Imdb 5000 Dataset &#169; Kaggle
+    </div>
+</body>
+</html>
